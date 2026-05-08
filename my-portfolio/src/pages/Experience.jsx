@@ -1,34 +1,76 @@
+import { useQuery } from '@tanstack/react-query';
+import { axiosInstance } from '../api/profileApi';
+import './Experience.css';
+
 export default function Experience() {
-  const experiences = [
-    {
-      id: 1,
-      company: "Company Name 1",
-      position: "Job Title",
-      duration: "Jan 2023 - Present",
-      description: "Brief description of your role and responsibilities"
-    },
-    {
-      id: 2,
-      company: "Company Name 2",
-      position: "Previous Job Title",
-      duration: "Jun 2021 - Dec 2022",
-      description: "Brief description of your role and responsibilities"
+  const { data: experiences = [], isLoading } = useQuery({
+    queryKey: ['experience'],
+    queryFn: async () => {
+      const res = await axiosInstance.get('/api/experiences'); // ← Changed to plural
+      return res.data.data;
     }
-  ];
+  });
+
+  if (isLoading) return <div className="experience"><p>Loading experience...</p></div>;
 
   return (
-    <section>
-      <h2>Experience</h2>
-      <div>
-        {experiences.map((exp) => (
-          <div key={exp.id}>
-            <h3>{exp.position}</h3>
-            <p>{exp.company}</p>
-            <p>{exp.duration}</p>
-            <p>{exp.description}</p>
-          </div>
-        ))}
+    <section className="experience">
+      <div className="experience-container">
+        <h2>Professional Experience</h2>
+        
+        <div className="experience-timeline">
+          {experiences.map((exp, index) => (
+            <ExperienceCard key={exp.id} experience={exp} isLast={index === experiences.length - 1} />
+          ))}
+        </div>
       </div>
     </section>
+  );
+}
+
+function ExperienceCard({ experience, isLast }) {
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+  };
+
+  const getDuration = () => {
+    const start = formatDate(experience.startDate);
+    const end = experience.current ? 'Present' : formatDate(experience.endDate);
+    return `${start} - ${end}`;
+  };
+
+  return (
+    <div className={`experience-card ${isLast ? 'last' : ''}`}>
+      <div className="experience-header">
+        <div className="experience-role">
+          <h3>{experience.role}</h3>
+          <p className="company">{experience.company}</p>
+          <p className="location">{experience.location}</p>
+        </div>
+        <div className="experience-duration">
+          <span className={`duration ${experience.current ? 'current' : ''}`}>
+            {getDuration()}
+          </span>
+        </div>
+      </div>
+
+      <div className="experience-content">
+        <p className="description">{experience.description}</p>
+        
+          {experience.techUsed && (
+          <div className="tech-used">
+            <h4>Technologies Used:</h4>
+            <div className="tech-badges">
+              {(Array.isArray(experience.techUsed) ? experience.techUsed : experience.techUsed.split(','))
+                .map((tech, i) => (
+                  <span key={i} className="tech-badge">{tech.trim()}</span>
+                ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

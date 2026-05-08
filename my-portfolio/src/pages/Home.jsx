@@ -7,13 +7,13 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1>Swaroop's Profile here</h1>
-          <p className="subtitle">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+          <p className="subtitle">Software Engineer | Full Stack Developer | Cloud & DevOps  </p>
           <p className="description">
-            Welcome to my portfolio. I'm passionate about building beautiful and functional web applications.
+              Building scalable software systems for the next generation of products.
           </p>
           <div className="cta-buttons">
             <Link to="/profile" className="btn btn-primary">
-              View My Profile
+              Scan My Profile
             </Link>
             <Link to="/contact" className="btn btn-secondary">
               Get In Touch
@@ -25,12 +25,12 @@ export default function Home() {
       <section className="highlights">
         <div className="highlight-card">
           <h3>💻 Skills</h3>
-          <p>React, Node.js, JavaScript, and more</p>
+          <p>C++ • Java • Python • Go • React.js and more</p>
           <Link to="/skills">Learn more →</Link>
         </div>
         <div className="highlight-card">
-          <h3>🎯 Experience</h3>
-          <p>Years of experience in web development</p>
+          <h3>Professional Journey</h3>
+          <p>3+ years in software engineering and development</p>
           <Link to="/experience">Learn more →</Link>
         </div>
         <div className="highlight-card">
