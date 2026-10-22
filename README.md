@@ -19,7 +19,9 @@ A modern, responsive portfolio website built with React, Vite, and styled with a
 ## Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/SwaroopAV21/portfolio-frontend.git
    cd portfolio-frontend
    npm run dev
+   ```
