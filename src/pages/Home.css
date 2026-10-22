@@ -1,0 +1,178 @@
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  margin: 40px 0;
+  border-radius: 12px;
+  border: 2px solid #2c2416;
+  box-shadow: 6px 6px 0 rgba(44, 36, 22, 0.85);
+  background-color: #f7f0e1;
+  /* faint doodles on the paper + soft warm gradient */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220' fill='none' stroke='%232c2416' stroke-opacity='0.07' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 35q8-14 16 0t16 0t16 0'/%3E%3Ccircle cx='150' cy='35' r='10'/%3E%3Cpath d='M180 110l5 10 11 2-8 8 2 11-10-6-10 6 2-11-8-8 11-2z'/%3E%3Cpath d='M35 125l14 14M49 125l-14 14'/%3E%3Cpath d='M90 180c8-18 27-18 27 0s-19 18-19 5'/%3E%3Cpath d='M95 80v14M88 87h14'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #fbf5e8 0%, #eadfc8 100%);
+  background-size: 220px 220px, 100% 100%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #2c2416;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* hand-drawn underline under the name */
+.hero-content h1::after {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 8px;
+  margin: 8px auto 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 8' fill='none' stroke='%23b89460' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M2 5q17-6 34 0t34 0t34 0t34 0'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #5c4d38;
+  margin: 18px 0 20px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #6b5d4a;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 2px solid #2c2416;
+  box-shadow: 3px 3px 0 #2c2416;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #2c2416;
+}
+
+.btn-primary {
+  background-color: #c9a678;
+  color: #2c2416;
+}
+
+.btn-primary:hover {
+  background-color: #d6b78c;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #2c2416;
+}
+
+.btn-secondary {
+  background-color: #fff8e7;
+  color: #2c2416;
+}
+
+.btn-secondary:hover {
+  background-color: #fffdf6;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #2c2416;
+}
+
+/* ---------- HIGHLIGHT CARDS ---------- */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 36px;
+  margin: 70px 0;
+}
+
+.highlight-card {
+  position: relative;
+  background-color: #fff8e7;
+  background-image: repeating-linear-gradient(
+    transparent 0,
+    transparent 27px,
+    rgba(184, 148, 96, 0.18) 28px
+  ); /* faint ruled-notebook lines */
+  padding: 34px 30px 30px;
+  border-radius: 6px;
+  border: 2px solid #2c2416;
+  box-shadow: 4px 4px 0 rgba(44, 36, 22, 0.85);
+  transform: rotate(-1deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.highlight-card:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+/* tape strip on top */
+.highlight-card::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 70px;
+  height: 22px;
+  background: rgba(201, 166, 120, 0.75);
+  border: 1px solid rgba(44, 36, 22, 0.25);
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.highlight-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow: 8px 8px 0 rgba(44, 36, 22, 0.85);
+}
+
+.highlight-card h3 {
+  color: #2c2416;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.highlight-card p {
+  color: #6b5d4a;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.highlight-card a {
+  color: #8a6a35;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px dashed #c9a678;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.highlight-card a:hover {
+  color: #2c2416;
+  border-bottom-color: #2c2416;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .highlight-card {
+    transition: none;
+  }
+}
