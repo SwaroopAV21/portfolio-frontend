@@ -4,21 +4,27 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #b89460;
+  /* layer 1: doodles, layer 2: soft vignette, layer 3: paper dots */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260' fill='none' stroke='%232c2416' stroke-opacity='0.14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 40q10-16 20 0t20 0t20 0'/%3E%3Ccircle cx='170' cy='40' r='12'/%3E%3Cpath d='M205 120l6 12 13 2-10 9 3 13-12-7-12 7 3-13-10-9 13-2z'/%3E%3Cpath d='M40 150l16 16M56 150l-16 16'/%3E%3Cpath d='M100 210c10-22 32-22 32 0s-22 22-22 6'/%3E%3Cpath d='M110 90v16M102 98h16'/%3E%3Cpath d='M20 235q30-26 60 0'/%3E%3Cpath d='M170 200l25-10m-8-8l8 8-10 8'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.18)),
+    radial-gradient(rgba(44, 36, 22, 0.06) 1px, transparent 1px);
+  background-size: 260px 260px, 100% 100%, 6px 6px;
+  background-attachment: scroll, fixed, scroll;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Source Sans Pro',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
   color: #2c2416;
 }
 
-html {
-  background-color: #ffffff;
-}
-
 #root {
-  background-color: #ffffff;
   min-height: 100vh;
+  /* no background here, so the pattern shows through */
 }

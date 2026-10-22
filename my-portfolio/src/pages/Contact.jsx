@@ -47,6 +47,18 @@ export default function Contact() {
               <h3>Email</h3>
               <p>swaroopav21@outlook.com</p>
             </div>
+
+            <div className="info-card">
+              <div className="info-icon linkedin">in</div>
+              <h3>LinkedIn</h3>
+              <a
+                href="https://www.linkedin.com/in/swaroop-a-v-386067211/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Profile
+              </a>
+            </div>
             
             <div className="info-card">
               <div className="info-icon">📍</div>
@@ -54,11 +66,6 @@ export default function Contact() {
               <p>Bangalore, India</p>
             </div>
             
-            <div className="info-card">
-              <div className="info-icon">⚡</div>
-              <h3>Response Time</h3>
-              <p>Within 24 hours</p>
-            </div>
           </div>
 
           <div className="contact-form-container">
