@@ -2,13 +2,15 @@ name: Build
 run-name: Docker build for frontend
 
 on:
-    # push:
-    #     branches:
-    #         - "V1_0.0"
+    push:
+        branches:
+            - "V1_0.0"
     pull_request:
         branches:
             - "main"
     workflow_dispatch:
+
+    workflow_call:
 
 permissions: { contents: read, packages: write }
 
