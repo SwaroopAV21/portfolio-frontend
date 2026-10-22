@@ -7,10 +7,15 @@ on:
     #         - "V1_0.0"
     pull_request:
         branches:
-            - "main"
+            - main
     workflow_dispatch:
 
     workflow_call:
+      secrets:
+        DOCKERHUB_USERNAME:
+          required: true
+        DOCKERHUB_TOKEN:
+          required: true
 
 permissions: { contents: read, packages: write }
 
