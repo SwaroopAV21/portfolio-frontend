@@ -11,6 +11,11 @@ on:
     workflow_dispatch:
 
     workflow_call:
+      secrets:
+        DOCKERHUB_USERNAME:
+          required: true
+        DOCKERHUB_TOKEN:
+          required: true
 
 permissions: { contents: read, packages: write }
 
