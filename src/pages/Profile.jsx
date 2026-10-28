@@ -7,7 +7,7 @@ export default function Profile() {
   const { data: featuredProjects = [], isLoading: featuredLoading } = useQuery({
     queryKey: ['projects', 'featured'],
     queryFn: async () => {
-      const res = await axiosInstance.get('/api/projects/featured');
+      const res = await axiosInstance.get('/projects/featured');
       return res.data.data;
     }
   });
@@ -16,7 +16,7 @@ export default function Profile() {
   const { data: allProjects = [], isLoading: allLoading } = useQuery({
     queryKey: ['projects'],
     queryFn: async () => {
-      const res = await axiosInstance.get('/api/projects');
+      const res = await axiosInstance.get('/projects');
       return res.data.data;
     }
   });
