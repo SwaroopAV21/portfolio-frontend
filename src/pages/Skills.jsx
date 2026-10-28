@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { axiosInstance } from '../api/profileApi';
+import { axiosInstance } from '../api/api';
 import './Skills.css';
 
 export default function Skills() {

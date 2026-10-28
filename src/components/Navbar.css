@@ -39,3 +39,33 @@
 .nav-menu a:hover {
   color: #c9a678;
 }
+
+.nav-metrics-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-new-badge {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background-color: #b84432;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.nav-logout {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #2c2416;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+}
+
+.nav-logout:hover {
+  color: #c9a678;
+}

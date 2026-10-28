@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { axiosInstance } from '../api/profileApi';
+import { axiosInstance } from '../api/api';
 import './Contact.css';
 
 const FEEDBACK_TYPES = [
@@ -43,7 +43,7 @@ export default function Contact() {
       await axiosInstance.post('/api/feedback', form);
       setStatus('success');
       setForm(INITIAL_FORM);
-    } catch (error) {
+    } catch {
       setStatus('error');
     } finally {
       setIsSubmitting(false);

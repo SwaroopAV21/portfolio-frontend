@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { axiosInstance } from '../api/axiosConfig';
+import { axiosInstance } from '../api/api';
 import './Profile.css';
 
 export default function Profile() {
