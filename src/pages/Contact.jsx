@@ -40,7 +40,7 @@ export default function Contact() {
 
     try {
       // payload: { name, email, type, rating, message }
-      await axiosInstance.post('/feedback', form);
+      await axiosInstance.post('/api/feedback', form);
       setStatus('success');
       setForm(INITIAL_FORM);
     } catch (error) {
