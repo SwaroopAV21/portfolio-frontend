@@ -7,7 +7,7 @@ export default function Skills() {
   const { data: groupedSkills = {}, isLoading } = useQuery({
     queryKey: ['skills', 'grouped'],
     queryFn: async () => {
-      const res = await axiosInstance.get('/api/skills/grouped');
+      const res = await axiosInstance.get('/api/middleware/skill');
       return res.data.data; // Assuming same response structure
     }
   });

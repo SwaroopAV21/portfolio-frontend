@@ -6,7 +6,7 @@ export default function Experience() {
   const { data: experiences = [], isLoading } = useQuery({
     queryKey: ['experience'],
     queryFn: async () => {
-      const res = await axiosInstance.get('/api/experiences'); // ← Changed to plural
+      const res = await axiosInstance.get('/api/middleware/experiences'); // ← Changed to plural
       return res.data.data;
     }
   });
